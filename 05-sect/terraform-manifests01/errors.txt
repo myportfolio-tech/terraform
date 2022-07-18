@@ -1,0 +1,28 @@
+If EACH availibility zone tht do not have a default subnet, you will get the following error
+
+│ Error: Error launching source instance: InvalidInput: No default subnet for availability zone: 'us-east-1a'.
+│       status code: 400, request id: 28cfdf1f-b972-407b-a1c8-4c51eb409fe5
+│
+│   with aws_instance.myec2vm["us-east-1a"],
+│   on c5-ec2instance.tf line 12, in resource "aws_instance" "myec2vm":
+│   12: resource "aws_instance" "myec2vm" {
+│
+
+SOLUTION
+Create a default sibnet in a console like 
+
+| aws ec2 create-default-subnet --availability-zone us-east-1a
+
+-------------------------------------------------------------------------------------------------------
+Not all instance types are available in all availibility zones.
+╷
+│ Error: Error launching source instance: Unsupported: Your requested instance type (t3.micro) is not supported in your requested Availability Zone (us-east-1e). Please retry your request by not specifying an Availability Zone or choosing us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1f.
+│       status code: 400, request id: 07a5c86d-48e5-4d3f-9b3b-990ffbb0c341
+│
+│   with aws_instance.myec2vm["us-east-1e"],
+│   on c5-ec2instance.tf line 12, in resource "aws_instance" "myec2vm":
+│   12: resource "aws_instance" "myec2vm" {
+│
+╵
+
+
