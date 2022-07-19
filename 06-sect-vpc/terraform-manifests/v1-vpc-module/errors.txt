@@ -1,0 +1,7 @@
+╷
+│ Error: Error creating DB Subnet Group: AccessDenied: User: arn:aws:iam::822575900206:user/wecloud is not authorized to perform: rds:CreateDBSubnetGroup on resource: arn:aws:rds:us-east-1:822575900206:subgrp:weknowx-vpc because no identity-based policy allows the rds:CreateDBSubnetGroup action
+│       status code: 403, request id: 9643b42b-c1e0-4a37-8434-c5327524c61c
+│
+│   with module.app-vpc-dev.aws_db_subnet_group.database[0],
+│   on .terraform\modules\app-vpc-dev\main.tf line 458, in resource "aws_db_subnet_group" "database":
+│  458: resource "aws_db_subnet_group" "database" {
