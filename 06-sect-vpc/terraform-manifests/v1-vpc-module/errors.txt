@@ -5,3 +5,8 @@
 │   with module.app-vpc-dev.aws_db_subnet_group.database[0],
 │   on .terraform\modules\app-vpc-dev\main.tf line 458, in resource "aws_db_subnet_group" "database":
 │  458: resource "aws_db_subnet_group" "database" {
+
+
+RESOLUTION: I switched to the root user and the permissions were fixed. 
+I need to check with the IAM settings and understand what permissions we
+need to grant to the wecloud profile.
